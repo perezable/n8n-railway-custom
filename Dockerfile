@@ -28,8 +28,8 @@ RUN apk --update add --virtual build-dependencies python3 build-base && \
     apk del build-dependencies
 WORKDIR /data
 EXPOSE $PORT
-CMD export N8N_PORT=$PORT && n8n
-
+ENTRYPOINT ["sh", "-c", "export N8N_PORT=$PORT && exec n8n"]
+CMD []
 
 
 
