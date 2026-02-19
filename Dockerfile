@@ -39,7 +39,7 @@ WORKDIR /data
 
 EXPOSE $PORT
 
-CMD export N8N_PORT=$PORT && n8n start
+CMD export N8N_PORT=$PORT && n8n
 
 
 
