@@ -31,6 +31,8 @@ USER root
 
 RUN apk --update add --virtual build-dependencies python3 build-base && \
     npm_config_user=root npm install --location=global n8n@${N8N_VERSION} && \
+    cd /usr/local/lib/node_modules/n8n && \
+    npm install @brightdata/n8n-nodes-brightdata n8n-nodes-dataforseo n8n-nodes-serpapi && \
     apk del build-dependencies
 
 WORKDIR /data
